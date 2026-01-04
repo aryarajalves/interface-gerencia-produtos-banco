@@ -1,5 +1,5 @@
-# Usar imagem base leve do Python
-FROM python:3.9-slim
+# Usar imagem base completa do Python (evita erros de compilação)
+FROM python:3.9
 
 # Definir diretório de trabalho inside do container
 WORKDIR /app
@@ -8,8 +8,8 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Instalar dependências do sistema necessárias (opcional, mas comum para psycopg2 etc)
-# RUN apt-get update && apt-get install -y gcc libpq-dev && rm -rf /var/lib/apt/lists/*
+# Instalar dependências do sistema... (já incluídas na imagem full)
+
 
 # Copiar requirements e instalar
 COPY requirements.txt .

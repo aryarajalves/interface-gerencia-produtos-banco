@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   backend:
-    image: rag-produtos-backend:latest
+    image: aryarajalves/interface-gerencia-produtos-banco:backend-latest
     build: 
       context: ./backend
       dockerfile: Dockerfile
@@ -27,7 +27,7 @@ services:
       - network_swarm_public
 
   frontend:
-    image: rag-produtos-frontend:latest
+    image: aryarajalves/interface-gerencia-produtos-banco:frontend-latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
