@@ -47,7 +47,7 @@ async def service_error_handler(request: Request, exc: ServiceError):
 # Configuração CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*", "https://produtos.aryaraj.shop", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

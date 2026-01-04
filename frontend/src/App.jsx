@@ -11,6 +11,7 @@ import { supabase } from './supabaseClient'
 const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000') + '/products';
 
 function App() {
+  console.log("Current API URL:", API_URL);
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('Todas')
   const [searchTerm, setSearchTerm] = useState('')
