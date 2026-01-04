@@ -97,6 +97,10 @@ O projeto já inclui uma configuração pronta para Docker Swarm + Traefik.
 docker stack deploy -c stack.yml produtos_stack
 ```
 
+As imagens já estão configuradas para baixar do Docker Hub oficial:
+- Backend: `aryarajalves/interface-gerencia-produtos-banco:backend-latest`
+- Frontend: `aryarajalves/interface-gerencia-produtos-banco:frontend-latest`
+
 ## 📄 Estrutura do Projeto
 
 ```
