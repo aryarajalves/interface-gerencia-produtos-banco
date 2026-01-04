@@ -96,6 +96,22 @@ Em produção, a segurança de rede é gerenciada pelo **Traefik**:
 
 ---
 
+## 👤 4. Gerenciando Usuários (Supabase Auth)
+
+Para que alguém consiga fazer login no sistema, é necessário criar um usuário no painel do Supabase.
+
+### Passo a Passo para Criar Usuário:
+1.  Acesse o Dashboard do seu projeto no Supabase.
+2.  No menu lateral esquerdo, clique em **Authentication**.
+3.  Clique na aba **Users**.
+4.  Clique no botão verde **Add User** (canto superior direito).
+5.  Selecione **Send Magic Link** (se configurado) ou **Create new user** (Email/Password).
+6.  Preencha o email e senha do usuário.
+7.  Clique em **Create User**.
+8.  Opcional: Clique nos três pontos `...` ao lado do usuário criado e selecione **Send password recovery** se quiser que ele defina a própria senha.
+
+⚠️ **Atenção:** Como o RLS está ativo, assim que este usuário fizer login, ele terá permissão para Inserir, Atualizar e Deletar produtos. Usuários não cadastrados apenas visualizam.
+
 ## ✅ Checklist para Novos Ambientes
 
 Ao implantar este sistema para um novo cliente:
