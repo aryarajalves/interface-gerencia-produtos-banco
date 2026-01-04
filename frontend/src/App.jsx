@@ -7,7 +7,8 @@ import UpdatePassword from './components/UpdatePassword'
 import { supabase } from './supabaseClient'
 
 // API URL CONFIG
-const API_URL = 'http://127.0.0.1:8000/products';
+// API URL CONFIG
+const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000') + '/products';
 
 function App() {
   const [products, setProducts] = useState([])

@@ -14,15 +14,15 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.http.routers.rag-backend.rule=Host(`api.produtos.agency10x.com.br`)
+        - traefik.http.routers.rag-backend.rule=Host(`apiprodutos.aryaraj.shop`)
         - traefik.http.routers.rag-backend.entrypoints=websecure
         - traefik.http.routers.rag-backend.tls.certresolver=letsencryptresolver
         - traefik.http.services.rag-backend.loadbalancer.server.port=8000
     environment:
-      - SUPABASE_URL=${SUPABASE_URL}
-      - SUPABASE_KEY=${SUPABASE_KEY}
-      - RATE_LIMIT_READ=${RATE_LIMIT_READ:-10/minute}
-      - RATE_LIMIT_WRITE=${RATE_LIMIT_WRITE:-5/minute}
+      - SUPABASE_URL=https://ypfutztnpporvxiyajhl.supabase.co
+      - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlwZnV0enRucHBvcnZ4aXlhamhsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDE1MDU5MiwiZXhwIjoyMDU1NzI2NTkyfQ.0uOm0pbfukVBhzPV7qKcl5WyhaBLyPDPzPBRGj6k77Y
+      - RATE_LIMIT_READ=10/minute
+      - RATE_LIMIT_WRITE=5/minute
     networks:
       - network_swarm_public
 
@@ -39,7 +39,7 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.http.routers.rag-frontend.rule=Host(`produtos.agency10x.com.br`)
+        - traefik.http.routers.rag-frontend.rule=Host(`produtos.aryaraj.shop`)
         - traefik.http.routers.rag-frontend.entrypoints=websecure
         - traefik.http.routers.rag-frontend.tls.certresolver=letsencryptresolver
         - traefik.http.services.rag-frontend.loadbalancer.server.port=80
