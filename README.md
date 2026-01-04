@@ -73,6 +73,7 @@ npm install
 
 # Criar arquivo .env
 # Crie um arquivo .env na pasta frontend com:
+# VITE_API_URL=/api
 # VITE_SUPABASE_URL=sua_url
 # VITE_SUPABASE_ANON_KEY=sua_key
 
@@ -98,8 +99,8 @@ docker stack deploy -c stack.yml produtos_stack
 ```
 
 As imagens já estão configuradas para baixar do Docker Hub oficial:
-- Backend: `aryarajalves/interface-gerencia-produtos-banco:backend-latest`
-- Frontend: `aryarajalves/interface-gerencia-produtos-banco:frontend-latest`
+- Backend: `aryarajalves/interface-gerencia-produtos-banco:backend-1.0.0`
+- Frontend: `aryarajalves/interface-gerencia-produtos-banco:frontend-1.0.0`
 
 ## 📄 Estrutura do Projeto
 

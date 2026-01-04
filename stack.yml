@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   backend:
-    image: aryarajalves/interface-gerencia-produtos-banco:backend-latest
+    image: aryarajalves/interface-gerencia-produtos-banco:backend-1.0.0
     build: 
       context: ./backend
       dockerfile: Dockerfile
@@ -14,9 +14,20 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
+        # Regra 1: Acesso direto pelo subdomínio da API (Legado/Compatibilidade)
         - traefik.http.routers.rag-backend.rule=Host(`apiprodutos.aryaraj.shop`)
         - traefik.http.routers.rag-backend.entrypoints=websecure
         - traefik.http.routers.rag-backend.tls.certresolver=letsencryptresolver
+        
+        # Regra 2: Acesso via path /api no domínio principal (Same-Origin)
+        - traefik.http.routers.rag-backend-path.rule=Host(`produtos.aryaraj.shop`) && PathPrefix(`/api`)
+        - traefik.http.routers.rag-backend-path.entrypoints=websecure
+        - traefik.http.routers.rag-backend-path.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.rag-backend-path.middlewares=backend-stripprefix
+        
+        # Middleware para remover o /api da URL antes de enviar pro backend
+        - traefik.http.middlewares.backend-stripprefix.stripprefix.prefixes=/api
+        
         - traefik.http.services.rag-backend.loadbalancer.server.port=8000
     environment:
       - SUPABASE_URL=https://ypfutztnpporvxiyajhl.supabase.co
