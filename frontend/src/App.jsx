@@ -8,7 +8,7 @@ import { supabase } from './supabaseClient'
 
 // API URL CONFIG
 // API URL CONFIG
-const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000') + '/products';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000') + '/products/';
 
 function App() {
   console.log("Current API URL:", API_URL);
