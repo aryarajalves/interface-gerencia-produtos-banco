@@ -293,7 +293,10 @@ function App() {
           Gerente de Produtos
         </h1>
         <button
-          onClick={() => supabase.auth.signOut()}
+          onClick={async () => {
+            await supabase.auth.signOut();
+            setSession(null);
+          }}
           className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition font-medium shadow-lg shadow-red-900/20"
         >
           Sair
