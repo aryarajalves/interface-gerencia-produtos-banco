@@ -349,14 +349,14 @@ function App() {
 
             <div className="flex gap-2 w-full md:w-auto">
               <button
-                className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition font-medium shadow-lg shadow-slate-900/20 flex items-center justify-center gap-2"
+                className="hidden md:flex px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition font-medium shadow-lg shadow-slate-900/20 items-center justify-center gap-2"
                 onClick={handleDownloadTemplate}
                 title="Baixar Planilha Modelo"
               >
                 <span>📥</span> Modelo
               </button>
 
-              <label className="cursor-pointer px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition font-medium shadow-lg shadow-emerald-900/20 flex items-center justify-center gap-2">
+              <label className="hidden md:flex cursor-pointer px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition font-medium shadow-lg shadow-emerald-900/20 items-center justify-center gap-2">
                 <input
                   type="file"
                   accept=".csv"
